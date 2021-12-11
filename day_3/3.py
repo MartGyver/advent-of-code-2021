@@ -19,7 +19,7 @@ def calculate_rating(content, comparator):
     content = [j for j in content if j != 0]
     bits = len(content[0])
     for i in range(bits):
-        if sum([int(j[i]) for j in content]) > len(content)/2:
+        if sum([int(j[i]) for j in content]) >= len(content)/2:
             content = calculate_new_list(content, comparator, i)
         else:
             content = calculate_new_list(content, 1-comparator, i)  
